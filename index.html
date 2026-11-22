@@ -1,0 +1,131 @@
+
+<header>
+  <div class="brand">NEXUS<span> CREATOR</span></div>
+  <p>CREATE • SHOWCASE • GROW</p>
+</header>
+
+<main>
+  <section id="home" class="page active">
+    <div class="hero">
+      <span class="tag">CREATOR STUDIO</span>
+      <h1>Transforme tes idées en créations.</h1>
+      <p>Présente ton travail et développe ton activité créative.</p>
+      <button onclick="navigate('portfolio')">Mon portfolio →</button>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <p class="muted">Mes créations</p>
+        <strong id="count">0</strong>
+      </div>
+      <div class="card">
+        <p class="muted">Mes services</p>
+        <strong>3</strong>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Bienvenue sur NEXUS</h2>
+      <p class="muted">Ajoute tes créations, présente tes services et prépare tes propositions commerciales.</p>
+    </div>
+  </section>
+
+  <section id="portfolio" class="page">
+    <div class="card">
+      <h2>Mon portfolio</h2>
+      <label>Nom de la création</label>
+      <input id="projectName" maxlength="60" placeholder="Ex : Montage automobile">
+
+      <label>Catégorie</label>
+      <select id="projectType">
+        <option>Montage vidéo</option>
+        <option>Visuel publicitaire</option>
+        <option>Publication réseaux sociaux</option>
+        <option>Autre</option>
+      </select>
+
+      <label>Description</label>
+      <textarea id="projectDesc" maxlength="500" rows="3" placeholder="Décris ta création..."></textarea>
+
+      <button onclick="addProject()">Ajouter une création</button>
+    </div>
+
+    <div class="card">
+      <h2>Mes réalisations</h2>
+      <div id="projects"></div>
+    </div>
+  </section>
+
+  <section id="services" class="page">
+    <div class="card">
+      <h2>Mes services</h2>
+
+      <article class="service">
+        <h3>Montage vidéo court</h3>
+        <p>Montage, sous-titres et transitions.</p>
+        <strong>À partir de 10 €</strong>
+      </article>
+
+      <article class="service">
+        <h3>Visuel publicitaire</h3>
+        <p>Création de visuels pour les réseaux sociaux.</p>
+        <strong>À partir de 5 €</strong>
+      </article>
+
+      <article class="service">
+        <h3>Pack réseaux sociaux</h3>
+        <p>Plusieurs publications cohérentes.</p>
+        <strong>À partir de 15 €</strong>
+      </article>
+
+      <p class="muted">Prix indicatifs de démonstration, à adapter selon les prestations.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="page">
+    <div class="card">
+      <h2>Préparer un devis</h2>
+
+      <label>Nom du client (facultatif)</label>
+      <input id="client" maxlength="80" placeholder="Nom">
+
+      <label>Service demandé</label>
+      <select id="service">
+        <option>Montage vidéo court</option>
+        <option>Visuel publicitaire</option>
+        <option>Pack réseaux sociaux</option>
+        <option>Autre</option>
+      </select>
+
+      <label>Description de la demande</label>
+      <textarea id="details" maxlength="1000" rows="4" placeholder="Décris le besoin..."></textarea>
+
+      <button onclick="makeMessage()">Générer le message</button>
+
+      <textarea id="result" rows="8" placeholder="Ton message apparaîtra ici..."></textarea>
+
+      <button class="secondary" onclick="copyMessage()">Copier le message</button>
+    </div>
+  </section>
+
+  <section id="settings" class="page">
+    <div class="card">
+      <h2>Paramètres</h2>
+      <p class="muted">Tes créations sont sauvegardées localement dans ton navigateur.</p>
+
+      <button onclick="exportData()">Exporter mes données</button>
+
+      <div style="height:12px"></div>
+
+      <button class="danger" onclick="clearProjects()">Supprimer toutes mes créations</button>
+    </div>
+  </section>
+</main>
+
+<nav>
+  <button class="active" data-page="home" onclick="navigate('home')">Accueil</button>
+  <button data-page="portfolio" onclick="navigate('portfolio')">Portfolio</button>
+  <button data-page="services" onclick="navigate('services')">Services</button>
+  <button data-page="contact" onclick="navigate('contact')">Devis</button>
+  <button data-page="settings" onclick="navigate('settings')">Réglages</button>
+</nav>
